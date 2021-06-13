@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>component/Vec_canvas.qml</file>
+        <file>component/Butoon.qml</file>
+        <file>component/burush_plotter/Nomalpen.qml</file>
+        <file>component/burush_plotter/Highlighter.qml</file>
+        <file>component/burush_plotter/DividingPint_plotter.qml</file>
+        <file>component/burush_plotter/PointIntoLine.qml</file>
+        <file>component/Toolbar.qml</file>
+    </qresource>
+</RCC>
