@@ -8,5 +8,22 @@
         <file>component/burush_plotter/DividingPint_plotter.qml</file>
         <file>component/burush_plotter/PointIntoLine.qml</file>
         <file>component/Toolbar.qml</file>
+        <file>Scribble.qml</file>
+        <file>Front.qml</file>
+        <file>font/fontello-c5aab9a4/css/animation.css</file>
+        <file>font/fontello-c5aab9a4/css/fonts_fa-codes.css</file>
+        <file>font/fontello-c5aab9a4/css/fonts_fa-embedded.css</file>
+        <file>font/fontello-c5aab9a4/css/fonts_fa-ie7-codes.css</file>
+        <file>font/fontello-c5aab9a4/css/fonts_fa-ie7.css</file>
+        <file>font/fontello-c5aab9a4/css/fonts_fa.css</file>
+        <file>font/fontello-c5aab9a4/font/fonts_fa.eot</file>
+        <file>font/fontello-c5aab9a4/font/fonts_fa.svg</file>
+        <file>font/fontello-c5aab9a4/font/fonts_fa.ttf</file>
+        <file>font/fontello-c5aab9a4/font/fonts_fa.woff</file>
+        <file>font/fontello-c5aab9a4/font/fonts_fa.woff2</file>
+        <file>font/fontello-c5aab9a4/config.json</file>
+        <file>font/fontello-c5aab9a4/demo.html</file>
+        <file>font/fontello-c5aab9a4/LICENSE.txt</file>
+        <file>font/fontello-c5aab9a4/README.txt</file>
     </qresource>
 </RCC>

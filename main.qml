@@ -4,17 +4,47 @@ import "component"
 
 Window {
     id: main_window
-    width: 640
-    height: 480
+    width: Screen.width * 0.70
+    height: Screen.height * 0.70
     visible: true
     title: qsTr("ArisNote")
 
     Rectangle {
-        state: "front"
-    }
+        width: parent
+        height: parent
+        color: "#00595959"
+        state: "empty"
 
-    Rectangle {
-        state: "scribble"
-    }
+        Front {
+            id: front
+        }
 
+        Scribble {
+            id: scrrible
+        }
+
+        states: [
+            State {
+                name: "front"
+                PropertyChanges {
+                    target: front
+
+                }
+            } ,
+            State {
+                name: "scribble"
+                PropertyChanges {
+                    target: scribble
+
+                }
+            }
+        ]
+    }
 }
+
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:0.5}
+}
+##^##*/

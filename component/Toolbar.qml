@@ -1,20 +1,19 @@
 import QtQuick 2.0
 import "burush_plotter"
 
+
 Rectangle {
-    height: main_window.height / 12
-    width: main_window.width * 0.8
+    height: parent
+    width: parent
     radius: 10
     color: "#fafaff"
-
+    visible: true
 }
-
-
 
 
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;formeditorZoom:0.66;height:480;width:640}
+    D{i:0;formeditorZoom:0.66}
 }
 ##^##*/

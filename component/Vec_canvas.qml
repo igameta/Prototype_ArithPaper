@@ -1,8 +1,10 @@
 import QtQuick 2.0
 
 Rectangle {
-    height: main_window.height
-    width: main_window.width
+    height: parent.height
+    width: parent.width
+    visible: true
+    color: "white"
 
     Canvas {
         anchors.fill: parent
@@ -12,8 +14,4 @@ Rectangle {
 
 }
 
-/*##^##
-Designer {
-    D{i:0;autoSize:true;height:480;width:640}
-}
-##^##*/
+
