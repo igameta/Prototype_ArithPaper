@@ -1,1 +1,1 @@
-# Arisnote
+# ArithPaper
