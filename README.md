@@ -1,2 +1,2 @@
 # ArithPaper
-This is the electronical paper application.
+This is an electronical paper application.
