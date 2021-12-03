@@ -1,9 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystem;
-using UnityEngine.Experimental.Input;
-
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 namespace FreeDraw
 {
@@ -13,7 +11,7 @@ namespace FreeDraw
     // 2. Set the drawing_layers  to use in the raycast
     // 3. Attach a 2D collider (like a Box Collider 2D) to this sprite
     // 4. Hold down left mouse to draw on this texture!
-    public class InputSystem_Drawable : MonoBehaviour
+    public class IS_Drawable : MonoBehaviour
     {
         // PEN COLOUR
         public static Color Pen_Colour = Color.red;     // Change these to change the default drawing settings
@@ -34,7 +32,7 @@ namespace FreeDraw
         public Color Reset_Colour = new Color(0, 0, 0, 0);  // By default, reset the canvas to be transparent
 
         // Used to reference THIS specific file without making all methods static
-        public static InputSystem_Drawable drawable;
+        public static IS_Drawable drawable;
         // MUST HAVE READ/WRITE enabled set in the file editor of Unity
         Sprite drawable_sprite;
         Texture2D drawable_texture;
@@ -48,8 +46,8 @@ namespace FreeDraw
 
 
 
-//////////////////////////////////////////////////////////////////////////////
-// BRUSH TYPES. Implement your own here
+        //////////////////////////////////////////////////////////////////////////////
+        // BRUSH TYPES. Implement your own here
 
 
         // When you want to make your own type of brush effects,
@@ -89,14 +87,14 @@ namespace FreeDraw
             // 3. Actually apply the changes we marked earlier
             // Done here to be more efficient
             ApplyMarkedPixelChanges();
-            
+
             // 4. If dragging, update where we were previously
             previous_drag_position = pixel_pos;
         }
 
 
 
-        
+
         // Default brush type. Has width and colour.
         // Pass in a point in WORLD coordinates
         // Changes the surrounding pixels of the world_point to the static pen_colour
@@ -130,7 +128,7 @@ namespace FreeDraw
             // PenBrush is the NAME of the method we want to set as our current brush
             current_brush = PenBrush;
         }
-//////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -142,11 +140,12 @@ namespace FreeDraw
         void Update()
         {
             // Is the user holding down the left mouse button?
-            bool mouse_held_down = mouse.current ;
+            // InputSystem‚©‚ç‚Ì’l‚ÌŽæ“¾‚í‚©‚ç‚ñ
+            bool mouse_held_down = Mouse.current.leftbutton_wasPressedThisFrame;
             if (mouse_held_down && !no_drawing_on_current_drag)
             {
                 // Convert mouse coordinates to world coordinates
-                Vector2 mouse_world_position = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+                Vector2 mouse_world_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
                 // Check if the current mouse position overlaps our image
                 Collider2D hit = Physics2D.OverlapPoint(mouse_world_position, Drawing_Layers.value);
@@ -291,7 +290,7 @@ namespace FreeDraw
         }
 
 
-        
+
         void Awake()
         {
             drawable = this;
