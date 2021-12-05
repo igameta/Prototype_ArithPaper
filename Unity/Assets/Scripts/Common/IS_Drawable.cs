@@ -141,40 +141,40 @@ namespace FreeDraw
         {
             // Is the user holding down the left mouse button?
             // InputSystem‚©‚ç‚Ì’l‚ÌŽæ“¾‚í‚©‚ç‚ñ
-            bool mouse_held_down = Mouse.current.leftbutton_wasPressedThisFrame;
-            if (mouse_held_down && !no_drawing_on_current_drag)
-            {
-                // Convert mouse coordinates to world coordinates
-                Vector2 mouse_world_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //var mouse_held_down = Mouse.current.leftbutton;
+            //if (mouse_held_down && !no_drawing_on_current_drag)
+            //{
+            //    // Convert mouse coordinates to world coordinates
+            //    Vector2 mouse_world_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-                // Check if the current mouse position overlaps our image
-                Collider2D hit = Physics2D.OverlapPoint(mouse_world_position, Drawing_Layers.value);
-                if (hit != null && hit.transform != null)
-                {
-                    // We're over the texture we're drawing on!
-                    // Use whatever function the current brush is
-                    current_brush(mouse_world_position);
-                }
+            //    // Check if the current mouse position overlaps our image
+            //    Collider2D hit = Physics2D.OverlapPoint(mouse_world_position, Drawing_Layers.value);
+            //    if (hit != null && hit.transform != null)
+            //    {
+            //        // We're over the texture we're drawing on!
+            //        // Use whatever function the current brush is
+            //        current_brush(mouse_world_position);
+            //    }
 
-                else
-                {
-                    // We're not over our destination texture
-                    previous_drag_position = Vector2.zero;
-                    if (!mouse_was_previously_held_down)
-                    {
-                        // This is a new drag where the user is left clicking off the canvas
-                        // Ensure no drawing happens until a new drag is started
-                        no_drawing_on_current_drag = true;
-                    }
-                }
-            }
-            // Mouse is released
-            else if (!mouse_held_down)
-            {
-                previous_drag_position = Vector2.zero;
-                no_drawing_on_current_drag = false;
-            }
-            mouse_was_previously_held_down = mouse_held_down;
+            //    else
+            //    {
+            //        // We're not over our destination texture
+            //        previous_drag_position = Vector2.zero;
+            //        if (!mouse_was_previously_held_down)
+            //        {
+            //            // This is a new drag where the user is left clicking off the canvas
+            //            // Ensure no drawing happens until a new drag is started
+            //            no_drawing_on_current_drag = true;
+            //        }
+            //    }
+            //}
+            //// Mouse is released
+            //else if (!mouse_held_down)
+            //{
+            //    previous_drag_position = Vector2.zero;
+            //    no_drawing_on_current_drag = false;
+            //}
+            //mouse_was_previously_held_down = mouse_held_down;
         }
 
 
