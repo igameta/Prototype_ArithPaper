@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-namespace FreeDraw
+namespace Drawing
 {
     public class ToolSelection : MonoBehaviour
     {
@@ -30,45 +30,57 @@ namespace FreeDraw
         // 選択中の色の保持
         public enum ColorPicker
         {
-            first,
-            second,
-            third
+            first=0,
+            second=1,
+            third=2
         }
-        public ColorPicker CurColor = ColorPicker.first;
+        public static ColorPicker CurColor = ColorPicker.first;
 
-        // 選択ツールを有効化
-        private void ToolActivator ( Toolmode SelTool )
+        // CurColorGetter
+        public static int GetCurColor()
         {
-            switch (SelTool)
+            return (int)CurColor;
+        }
+
+        //////////////////////////////////////////////////////////////
+        /// ペンの設定とか
+
+        // ペン類の太さ
+        public double Pen_weidth = 1.0;
+        public double High_weidth = 2.5;
+
+        // ツール変更
+        public void ChangeTool_Pen()
+        {
+            if ( UsingTool != Toolmode.Pen)
             {
-                case Toolmode.Pen:
-                    UsingTool = Toolmode.Pen;
-                    //CurrentTool.transform.Translate(-305, 191, 0);
-                    break;
-
-                case Toolmode.Highlighter:
-                    UsingTool = Toolmode.Highlighter;
-                    //CurrentTool.transform.Translate(-249, 191, 0);
-                    break;
-
-                case Toolmode.Eraser:
-                    UsingTool = Toolmode.Eraser;
-                    //CurrentTool.transform.Translate(-192, 191, 0);
-                    break;
-
-                case Toolmode.Constractions:
-                    UsingTool = Toolmode.Constractions;
-                    //CurrentTool.transform.Translate(252, 191, 0);
-                    break;
+                UsingTool = Toolmode.Pen;
 
             }
         }
 
-        //// 選択カラーピッカーを有効化
-        //void ColorActivator(ColorPicker SelColor)
-        //{
+        public void ChangeTool_High()
+        {
+            if ( UsingTool != Toolmode.Highlighter)
+            {
+                UsingTool = Toolmode.Highlighter;
 
-        //}
+            }
+        }
+
+        public void ChangeTool_Eraser()
+        {
+            if ( UsingTool=Toolmode.Eraser)
+            {
+                UsingTool = Toolmode.Eraser;
+
+            }
+        }
+
+        public void ChangeTool_Constraction()
+        {
+
+        }
 
         // Start is called before the first frame update
         void Start()
@@ -83,39 +95,6 @@ namespace FreeDraw
         }
 
 
-        // ツールが選択されたときの処理
-        public void ChangeTool( Toolmode SelTool )
-        {
-            // 選択ツールが選択中のツールと同じか判定
-            if ( SelTool != UsingTool)
-            {
-                // ToolActivatorの起動とか
-                switch (SelTool)
-                {
-                    case Toolmode.Pen:
-                        ToolActivator(SelTool);
-                    break;
-
-                    case Toolmode.Highlighter:
-                        ToolActivator(SelTool);
-                    break;
-
-                    case Toolmode.Eraser:
-                        ToolActivator(SelTool);
-                    break;
-
-                    case Toolmode.Constractions:
-                        ToolActivator(SelTool);
-                    break;
-
-                }
-            }
-            // 太さの変更処理
-            else if ( SelTool != Toolmode.Constractions)
-            {
-
-            }
-        }
 
         // カラーピッカーを押されたときの処理
         //public void ChangeColorPicker ( ColorPicker SelPicker )

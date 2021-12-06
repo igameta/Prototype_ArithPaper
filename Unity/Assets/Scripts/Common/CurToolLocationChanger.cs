@@ -16,7 +16,7 @@ public class CurToolLocationChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int CurTool = FreeDraw.ToolSelection.GetUsingTool();
+        int CurTool = Drawing.ToolSelection.GetUsingTool();
         Vector3 pos = this.gameObject.transform.position;
         pos.y = 191; pos.z = 0;
 
