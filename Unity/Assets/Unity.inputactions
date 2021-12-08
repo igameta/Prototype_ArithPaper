@@ -275,7 +275,7 @@
                 },
                 {
                     "name": "Cancel",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "cc28025f-cc6f-48b6-b7fb-68ecdd7e2f37",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -760,14 +760,22 @@
             ]
         },
         {
-            "name": "New action map",
-            "id": "fa3b852c-2964-4f64-a7a8-9f7807e40b76",
+            "name": "Canvas",
+            "id": "6c6dd9f8-6dc0-40e9-9024-8b1a9b534c4e",
             "actions": [
                 {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "b8af2e31-45e5-4f53-964a-6141cebbc2fb",
+                    "name": "Button",
+                    "type": "PassThrough",
+                    "id": "34d8db70-2af0-47c5-8f1b-5370a717e223",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Vector2",
+                    "type": "PassThrough",
+                    "id": "ed7623b9-ba3c-4f1e-b6dd-605806f73a3b",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 }
@@ -775,12 +783,34 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "f5fe2278-43a8-4bbe-a2a4-d87906240471",
-                    "path": "",
+                    "id": "f44385fd-9a03-469b-93ff-b62c7d12a5f1",
+                    "path": "<Pen>/tip",
                     "interactions": "",
                     "processors": "",
                     "groups": "Pen",
-                    "action": "New action",
+                    "action": "Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21472c28-9ec0-45c3-802c-53630271336e",
+                    "path": "<Pen>/eraser",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Pen",
+                    "action": "Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4abaa97b-144b-47e3-86e1-fcdee60b7711",
+                    "path": "<pen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Pen",
+                    "action": "Vector2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -79,16 +79,6 @@ namespace Drawing
             }
         }
 
-        //public void ChangeTool_Constraction()
-        //{
-
-        //}
-
-        //// êFïœçX
-        //void SetPenColor(Color CC)
-        //{
-        //    InputSystem_Drawable.PenColor = CC;
-        //}
 
 
         // Start is called before the first frame update
