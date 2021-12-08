@@ -9,7 +9,7 @@ public class CurToolLocationChanger : MonoBehaviour
     void Start()
     {
         Vector3 pos = this.gameObject.transform.position;
-        pos.x=-305; pos.y = 191; pos.z = 0;
+        pos.x= -305; pos.y = 191; pos.z = 0;
         this.gameObject.transform.position = pos;
     }
 

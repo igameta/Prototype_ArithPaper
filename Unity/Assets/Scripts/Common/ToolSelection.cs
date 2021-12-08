@@ -8,6 +8,9 @@ namespace Drawing
 {
     public class ToolSelection : MonoBehaviour
     {
+
+///////////////////////////////////
+/// ToolSaver and ColorSaver
         /* 選択中のツールを保持 初期値:0(Pen)
                    Pen=0   Highrighter=1 
                 Eraser=2 Constractions=3
@@ -27,27 +30,21 @@ namespace Drawing
             return (int)UsingTool;
         }
 
-        // 選択中の色の保持
-        public enum ColorPicker
-        {
-            first=0,
-            second=1,
-            third=2
-        }
-        public static ColorPicker CurColor = ColorPicker.first;
+        /////
+        //// 選択中のカラーピッカーの保持
+        //public enum ColorPicker
+        //{
+        //    first=0,
+        //    second=1,
+        //    third=2
+        //}
+        //public static ColorPicker CurColor = ColorPicker.first;
 
-        // CurColorGetter
-        public static int GetCurColor()
-        {
-            return (int)CurColor;
-        }
 
-        //////////////////////////////////////////////////////////////
-        /// ペンの設定とか
+//////////////////////////////////////////////////////////////
+/// ボタン
 
-        // ペン類の太さ
-        public double Pen_weidth = 1.0;
-        public double High_weidth = 2.5;
+
 
         // ツール変更
         public void ChangeTool_Pen()
@@ -55,6 +52,9 @@ namespace Drawing
             if ( UsingTool != Toolmode.Pen)
             {
                 UsingTool = Toolmode.Pen;
+                Color c = InputSystem_Drawable.PenColor; //とりあえずの実装 後で変える
+                InputSystem_Drawable.UsingColor = c;
+
 
             }
         }
@@ -64,46 +64,40 @@ namespace Drawing
             if ( UsingTool != Toolmode.Highlighter)
             {
                 UsingTool = Toolmode.Highlighter;
+                Color c = InputSystem_Drawable.HighColor;
+                InputSystem_Drawable.UsingColor = c;
 
             }
         }
 
         public void ChangeTool_Eraser()
         {
-            if ( UsingTool=Toolmode.Eraser)
+            if ( UsingTool != Toolmode.Eraser)
             {
                 UsingTool = Toolmode.Eraser;
-
+                InputSystem_Drawable.UsingColor = new Color(255f, 255f, 255f, 0f);
             }
         }
 
-        public void ChangeTool_Constraction()
-        {
+        //public void ChangeTool_Constraction()
+        //{
 
-        }
+        //}
+
+        //// 色変更
+        //void SetPenColor(Color CC)
+        //{
+        //    InputSystem_Drawable.PenColor = CC;
+        //}
+
 
         // Start is called before the first frame update
         void Start()
         {
             //念の為初期化
             UsingTool = Toolmode.Pen;
-            CurColor = ColorPicker.first;
 
-            // ボタン押下検知
-            //Button btn = ToolSelection.GetComponent<Button>();
-            //btn.onClick.AddListener(TaskOnClick);
         }
-
-
-
-        // カラーピッカーを押されたときの処理
-        //public void ChangeColorPicker ( ColorPicker SelPicker )
-        //{
-        //    if ( CurColor != SelPicker)
-        //    {
-
-        //    }
-        //}
 
         // Update is called once per frame
         void Update()
