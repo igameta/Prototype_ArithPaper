@@ -21,11 +21,22 @@ namespace Drawing
         public static int Pen_Width = 1;
         public static int High_Width = 2;
 
+        InputAction Ptip, Perase, Ppos;
         // Start is called before the first frame update
         void Start()
         {
-
+            //Ptip = PlayerInput.actions["Tip"];
+            //Perase =PlayerInput.actions["Eraser"];
+            //Ppos =PlayerInput.actions["Position"];
         }
+
+        public bool OnTip(InputValue input)
+        {
+            bool isTipped = input.Get<bool>;
+            return isTipped;
+        }
+
+
 
         ////////////////////////////////////////////////////////////////////////////
         /// Copied and changed from FreeDraw by Foolish Mortals
@@ -104,7 +115,7 @@ namespace Drawing
         void Update()
         {
             // Is the user holding down the left mouse button?
-            bool mouse_held_down = Input.GetMouseButton(0);
+            bool mouse_held_down = Pen.current.tip;
             if (mouse_held_down && !no_drawing_on_current_drag)
             {
                 // Convert mouse coordinates to world coordinates

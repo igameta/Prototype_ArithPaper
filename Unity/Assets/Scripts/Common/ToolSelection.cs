@@ -24,12 +24,6 @@ namespace Drawing
         }
         public static Toolmode UsingTool = Toolmode.Pen;
 
-        // UsingToolGeter
-        public static int GetUsingTool()
-        {
-            return (int)UsingTool;
-        }
-
         /////
         //// 選択中のカラーピッカーの保持
         //public enum ColorPicker

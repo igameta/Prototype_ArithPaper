@@ -1,0 +1,121 @@
+{
+    "name": "Canvas",
+    "maps": [
+        {
+            "name": "Input",
+            "id": "321f8c0d-dbef-44bd-816b-200a1da9f2fe",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "PassThrough",
+                    "id": "8cb6df7f-da88-48bc-89f5-fea01e6412f0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Pos",
+                    "type": "PassThrough",
+                    "id": "596cd40d-7ccb-4aaa-adfc-a71e6a42f507",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Press",
+                    "type": "PassThrough",
+                    "id": "3682903d-17b1-4830-9e63-be56424e7965",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a8e5e149-3383-4f55-98dd-94abbad13d1a",
+                    "path": "<Pen>/tip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Canvas",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "06c8128a-6069-4151-8814-687ede481544",
+                    "path": "<Pen>/eraser",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Canvas",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "90611a0a-8eb3-4349-ad0a-11d29f43ad19",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Canvas",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8f08e27e-19b2-48cf-9964-159048fa69a0",
+                    "path": "<Pen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Canvas",
+                    "action": "Pos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1642c743-ad4d-4916-b074-1e8c21d6ee0a",
+                    "path": "<Pen>/pressure",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Canvas",
+                    "action": "Press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "df302fc8-1f48-4a34-b209-c35fdc0b2695",
+                    "path": "<Pen>/tilt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Canvas",
+                    "action": "Press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Canvas",
+            "bindingGroup": "Canvas",
+            "devices": [
+                {
+                    "devicePath": "<Pen>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Touchscreen>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

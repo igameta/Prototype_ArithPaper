@@ -2,45 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CurToolLocationChanger : MonoBehaviour
+namespace Drawing
 {
-
-    // Start is called before the first frame update
-    void Start()
+    public class CurToolLocationChanger : MonoBehaviour
     {
-        Vector3 pos = this.GetComponent<RectTransform>().anchoredPosition;
-        pos.x= -305f;
-        this.GetComponent<RectTransform>().anchoredPosition = pos;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        int CurTool = Drawing.ToolSelection.GetUsingTool();
-        Vector3 pos = this.GetComponent<RectTransform>().anchoredPosition;
-
-        switch (CurTool)
+        // Start is called before the first frame update
+        void Start()
         {
-            case 0:
-                pos.x=-305f;
-                this.GetComponent<RectTransform>().anchoredPosition = pos;
-                break;
+            Vector3 pos = this.GetComponent<RectTransform>().anchoredPosition;
+            pos.x = -305f;
+            this.GetComponent<RectTransform>().anchoredPosition = pos;
+        }
 
-            case 1:
-                pos.x=-249f;
-                this.GetComponent<RectTransform>().anchoredPosition = pos;
-                break;
+        // Update is called once per frame
+        void Update()
+        {
+            //int CurTool = Drawing.ToolSelection.GetUsingTool();
+            ToolSelection.Toolmode CurTool = ToolSelection.UsingTool;
+            Vector3 pos = this.GetComponent<RectTransform>().anchoredPosition;
 
-            case 2:
-                pos.x=-192f;
-                this.GetComponent<RectTransform>().anchoredPosition = pos;
-                break;
+            switch (CurTool)
+            {
+                case ToolSelection.Toolmode.Pen:
+                    pos.x = -305f;
+                    this.GetComponent<RectTransform>().anchoredPosition = pos;
+                    break;
 
-            case 3:
-                pos.x=252f;
-                this.GetComponent<RectTransform>().anchoredPosition = pos;
-                break;
+                case ToolSelection.Toolmode.Highlighter:
+                    pos.x = -249f;
+                    this.GetComponent<RectTransform>().anchoredPosition = pos;
+                    break;
 
+                case ToolSelection.Toolmode.Eraser:
+                    pos.x = -192f;
+                    this.GetComponent<RectTransform>().anchoredPosition = pos;
+                    break;
+
+                case ToolSelection.Toolmode.Constractions:
+                    pos.x = 252f;
+                    this.GetComponent<RectTransform>().anchoredPosition = pos;
+                    break;
+
+            }
         }
     }
 }
