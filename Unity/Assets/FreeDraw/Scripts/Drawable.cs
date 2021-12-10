@@ -128,19 +128,29 @@ namespace FreeDraw
             // PenBrush is the NAME of the method we want to set as our current brush
             current_brush = PenBrush;
         }
-//////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////
 
 
 
 
-
+        private Vector2 PressingPos = Vector2.zero;
 
         // This is where the magic happens.
         // Detects when user is left clicking, which then call the appropriate function
         void Update()
         {
             // Is the user holding down the left mouse button?
-            bool mouse_held_down = Pen.current.tip.wasPressedThisFrame;
+            bool mouse_held_down = false;
+            if (Pen.current.position.ReadValue() != PressingPos)
+            {
+                mouse_held_down = true;
+                PressingPos = Pen.current.position.ReadValue();
+            }
+            else
+            {
+                mouse_held_down = false;
+            }
+
             if (mouse_held_down && !no_drawing_on_current_drag)
             {
                 // Convert mouse coordinates to world coordinates
