@@ -18,7 +18,7 @@ namespace Drawing
         public static Color UsingColor = Color.black;
 
         // �y���ނ̑���
-        public static int Pen_Width = 1;
+        public static int Pen_Width = 5;
         public static int High_Width = 2;
 
         //    InputAction Boolean, Pos, Press;
@@ -107,7 +107,8 @@ namespace Drawing
            // Detects when user is left clicking, which then call the appropriate function
            void Update()
            {
-               Debug.Log("tip:"+ Pen.current.tip.wasPressedThisFrame +"loc:" + Pen.current.position.ReadValue() );
+               if(Pen.current.tip.wasPressedThisFrame)
+                Debug.Log("loc:" + Pen.current.position.ReadValue() );
               // var PenDevice = Pen.current;
 
                // Is the user holding down the left mouse button?
