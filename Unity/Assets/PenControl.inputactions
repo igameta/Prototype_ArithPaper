@@ -1,0 +1,107 @@
+{
+    "name": "PenControl",
+    "maps": [
+        {
+            "name": "Input",
+            "id": "a6553d66-42bc-4cf4-9ad5-6a804d96592f",
+            "actions": [
+                {
+                    "name": "PenTip",
+                    "type": "PassThrough",
+                    "id": "63f5b858-6b41-4f59-bf3b-ffac46d0d61b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
+                },
+                {
+                    "name": "PenEraser",
+                    "type": "PassThrough",
+                    "id": "a7ff1a85-bb1c-47cf-8ff4-1871f67b21ba",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
+                },
+                {
+                    "name": "PenPosition",
+                    "type": "PassThrough",
+                    "id": "6fbe6db5-941a-4c92-8731-bacb787b2506",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
+                },
+                {
+                    "name": "PenPress",
+                    "type": "Value",
+                    "id": "81d253e6-cebe-44d0-8dcb-80b644e0b1ed",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c9cc760f-4022-42ac-b58d-309158322fa4",
+                    "path": "<Pen>/tip",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Drawing",
+                    "action": "PenTip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "23586f74-39bb-402f-9b02-74dd4f1ba9ba",
+                    "path": "<Pen>/eraser",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Drawing",
+                    "action": "PenEraser",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "804ae053-cbe5-4746-9b89-9fde1efdb24d",
+                    "path": "<Pen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Drawing",
+                    "action": "PenPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b6a3b889-7a96-4688-afc1-6bab02a0cdf8",
+                    "path": "<Pen>/pressure",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Drawing",
+                    "action": "PenPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Drawing",
+            "bindingGroup": "Drawing",
+            "devices": [
+                {
+                    "devicePath": "<Pen>",
+                    "isOptional": true,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Touchscreen>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

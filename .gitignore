@@ -79,3 +79,7 @@ Unity/UserSettings/
 Unity/Logs/
 
 .sync-exclude.lst
+
+Unity/obj/
+
+Unity/.vsconfig

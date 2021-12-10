@@ -11,4 +11,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Canvas.unity
     guid: fb1224c59c73efa498a4b77071948bb9
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 1e13fadfb87e17a45a7cceacd24a0515, type: 2}
