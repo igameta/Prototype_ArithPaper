@@ -14,7 +14,7 @@ namespace FreeDraw
     public class Drawable : MonoBehaviour
     {
         // PEN COLOUR
-        public static Color Pen_Colour = Color.red;     // Change these to change the default drawing settings
+        public static Color Pen_Colour = Color.black;     // Change these to change the default drawing settings
         // PEN WIDTH (actually, it's a radius, in pixels)
         public static int Pen_Width = 3;
 
@@ -131,17 +131,32 @@ namespace FreeDraw
         //////////////////////////////////////////////////////////////////////////////
 
 
+        private bool pressing = false;
+        public void IsPressing(InputAction.CallbackContext context)
+        {
+            if (context.started)
+            {
+                pressing = true;
 
+                Debug.Log("Tip=true");
+            }
+
+            else if (context.canceled)
+            {
+                pressing = false;
+                Debug.Log("Tip=FALSE");
+            }
+        }
 
         private Vector2 PressingPos = Vector2.zero;
-
+        
         // This is where the magic happens.
         // Detects when user is left clicking, which then call the appropriate function
         void Update()
         {
             // Is the user holding down the left mouse button?
             bool mouse_held_down = false;
-            if (Pen.current.position.ReadValue() != PressingPos)
+            if (Pen.current.position.ReadValue() != PressingPos && pressing)
             {
                 mouse_held_down = true;
                 PressingPos = Pen.current.position.ReadValue();

@@ -83,3 +83,5 @@ Unity/Logs/
 Unity/obj/
 
 Unity/.vsconfig
+
+Unity/testbuild/
